@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="The most awesome person you have ever meet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>J7EEM</title>
+</head>
+<body>
+
+  <header>
+    <a href="#" class="logo">Basher</a>
+    <nav>
+        <a href="pagina1.html" class="active">About me</a>
+        <a href="pagina2.html" class="active">School</a>
+        <a href="pagina3.html" class="active">Stage</a>
+        <a href="pagina4.html" class="active">Contact</a>
+
+    </nav>
+  </header>
+  <section class="home">
+    <div class="home-img">
+        <img src="IMG_8613.JPG" alt="">
+    </div>
+    <div class="home-content">
+        <h1>Hi,it's <span>Basher</span></h1>
+        <h2 class="typing-text">Im a <span></span></h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, explicabo pariatur optio ab iure similique repellendus quo quasi a laborum sed corrupti cum, est, facilis quaerat eligendi blanditiis. Sapiente, est.</p>
+        <div class="social-icons">
+            <a href="#" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="facebook"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" aria-label="x"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <a href="#" class="btn">Hier me</a>
+    </div>
+
+
+  </section>
+  <!-- ====== Footer ====== -->
+  <footer class="bg-gray-900 text-gray-300 text-center py-6 mt-10">
+    <p class="text-sm">
+      © <span id="year"></span> <span class="font-semibold text-white">Your Company Name</span>. All rights reserved.
+    </p>
+    <p class="mt-2">
+      <a href="/privacy.html" class="text-teal-400 hover:text-teal-300 transition">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <!-- ====== Cookie Consent Banner ====== -->
+  <div id="cookie-banner"
+       class="fixed bottom-0 inset-x-0 bg-gray-800 text-gray-100 p-4 flex flex-col sm:flex-row justify-center items-center gap-3 shadow-lg transition-transform duration-500 translate-y-0 z-50">
+    <span class="text-center sm:text-left text-sm">
+      🍪 We use cookies to improve your experience. See our 
+      <a href="/privacy.html" class="text-teal-400 hover:text-teal-300 underline">Privacy Policy</a>.
+    </span>
+    <div class="flex gap-2">
+      <button id="accept-cookies"
+              class="bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md transition">
+        Accept
+      </button>
+      <button id="decline-cookies"
+              class="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md transition">
+        Decline
+      </button>
+    </div>
+  </div>
+
+  <!-- ====== Scripts ====== -->
+  <script>
+    // ========== Dynamic Year ==========
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ========== Cookie Consent Logic ==========
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const declineBtn = document.getElementById("decline-cookies");
+
+    function hideBanner() {
+      banner.classList.add("translate-y-full");
+      setTimeout(() => (banner.style.display = "none"), 400);
+    }
+
+    // Check consent status on load
+    const consent = localStorage.getItem("cookieConsent");
+    if (consent) {
+      hideBanner();
+      if (consent === "accepted") loadAnalytics();
+    }
+
+    // Accept cookies
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "accepted");
+      loadAnalytics();
+      hideBanner();
+    });
+
+    // Decline cookies
+    declineBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "declined");
+      window['ga-disable-G-XXXXXXX'] = true; // Replace G-XXXXXXX with your GA ID
+      hideBanner();
+    });
+
+    // ========== Google Analytics (loads only with consent) ==========
+    function loadAnalytics() {
+      if (window.analyticsLoaded) return; // prevent multiple loads
+      window.analyticsLoaded = true;
+
+      const gaScript = document.createElement('script');
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX'; // Replace with your GA ID
+      gaScript.async = true;
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX'); // Replace with your GA ID again
+      };
+    }
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+  <!-- ====== Main Content ====== -->
+  <main class="flex-grow">
+    <div class="max-w-3xl mx-auto p-6 text-center">
+      <h1 class="text-3xl font-bold mb-4">Welcome to Your Website</h1>
+      <p class="text-lg text-gray-600">This is an example of a GDPR/AVG-compliant site with a modern cookie consent banner.</p>
+    </div>
+  </main>
+
+  <!-- ====== Footer ====== -->
+  <footer class="bg-gray-900 text-gray-300 text-center py-6 mt-10">
+    <p class="text-sm">
+      © <span id="year"></span> <span class="font-semibold text-white">Your Company Name</span>. All rights reserved.
+    </p>
+    <p class="mt-2">
+      <a href="/privacy.html" class="text-teal-400 hover:text-teal-300 transition">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <!-- ====== Cookie Consent Banner ====== -->
+  <div id="cookie-banner"
+       class="fixed bottom-0 inset-x-0 bg-gray-800 text-gray-100 p-4 flex flex-col sm:flex-row justify-center items-center gap-3 shadow-lg transition-transform duration-500 translate-y-0 z-50">
+    <span class="text-center sm:text-left text-sm">
+      🍪 We use cookies to improve your experience. See our 
+      <a href="/privacy.html" class="text-teal-400 hover:text-teal-300 underline">Privacy Policy</a>.
+    </span>
+    <div class="flex gap-2">
+      <button id="accept-cookies"
+              class="bg-teal-500 hover:bg-teal-400 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md transition">
+        Accept
+      </button>
+      <button id="decline-cookies"
+              class="bg-gray-600 hover:bg-gray-500 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-md transition">
+        Decline
+      </button>
+    </div>
+  </div>
+
+  <!-- ====== Scripts ====== -->
+  <script>
+    // ========== Dynamic Year ==========
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // ========== Cookie Consent Logic ==========
+    const banner = document.getElementById("cookie-banner");
+    const acceptBtn = document.getElementById("accept-cookies");
+    const declineBtn = document.getElementById("decline-cookies");
+
+    function hideBanner() {
+      banner.classList.add("translate-y-full");
+      setTimeout(() => (banner.style.display = "none"), 400);
+    }
+
+    // Check consent status on load
+    const consent = localStorage.getItem("cookieConsent");
+    if (consent) {
+      hideBanner();
+      if (consent === "accepted") loadAnalytics();
+    }
+
+    // Accept cookies
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "accepted");
+      loadAnalytics();
+      hideBanner();
+    });
+
+    // Decline cookies
+    declineBtn.addEventListener("click", () => {
+      localStorage.setItem("cookieConsent", "declined");
+      window['ga-disable-G-XXXXXXX'] = true; // Replace G-XXXXXXX with your GA ID
+      hideBanner();
+    });
+
+    // ========== Google Analytics (loads only with consent) ==========
+    function loadAnalytics() {
+      if (window.analyticsLoaded) return; // prevent multiple loads
+      window.analyticsLoaded = true;
+
+      const gaScript = document.createElement('script');
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX'; // Replace with your GA ID
+      gaScript.async = true;
+      document.head.appendChild(gaScript);
+
+      gaScript.onload = () => {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX'); // Replace with your GA ID again
+      };
+    }
+  </script>
+
+</body>
+</html>
