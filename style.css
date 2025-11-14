@@ -32,7 +32,7 @@ header{
     left: 0;
     width: 100%;
     padding: 1rem 9%;
-    background-color: transparent;
+    background-color: #161616;
     filter: drop-shadow(10px);
     display: flex;
     justify-content: space-between;
@@ -108,7 +108,7 @@ section{
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background-color: black;
+    background-color: #161616;
 }
 
 .home .home-content h1{
@@ -213,11 +213,11 @@ span{
 
 .typing-text span::after{
     content: "";
-    background-color: black;
+    background-color:#161616;
     position: absolute;
     width: calc(100% + 8px);
     height: 100%;
-    border-left: 3px solid black;
+    border-left: 3px solid #161616;
     right: -8;
     animation: cursor 0.6s infinite;
     animation-direction: alternate-reverse;
@@ -279,7 +279,6 @@ span{
 	justify-content: center;
 	align-items: center;
 	align-content: stretch;
-    height: 100%;
 }
 
 .social-icons2 a{
@@ -303,6 +302,16 @@ span{
     background-color: #f5bd02;
     box-shadow: 0 0 25px #f5bd02;
 }
+footer{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+    position: fixed;
+    bottom:0;
+}
 footer a{
     font-size: 1.0rem;
     color: white;
@@ -315,5 +324,23 @@ footer a:hover,
 footer :active{
     color: #f5bd02;
     border-bottom: 3px solid #f5bd02;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    gap: 10px;
+    max-width: fit-content;
+}
+form label{
+    font-weight: bold;
+    color: #f5bd02;
+}
+form input[type=submit]{
+    max-width: fit-content;
+    color: #f5bd02;
+    background-color: #161616;
+    border-bottom: 3px solid transparent;
 }
 
