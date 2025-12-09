@@ -27,7 +27,8 @@
     <div class="home-content">
         <h1>Hi,it's <span>Basher</span></h1>
         <h2 class="typing-text">Im a <span></span></h2>
-        <p>Hallo! hier is mijn online portofolie!</p>
+        <span><p id="groet"></p></span>
+          <p> hier is mijn online portofolie!</p>
         <p>in deze site kunt u alle informatie over mij vinden</p>
         <div class="social-icons">
             <a href="https://www.instagram.com/j7eem1" aria-label="instagram"><i class="fa-brands fa-instagram"></i></a>
@@ -37,6 +38,18 @@
         <a href="#" class="btn">Download CV &#129035;</a>
     </div>
 
+<script>
+const time = new Date().getHours();
+let greeting;
+if (time < 12) {
+  greeting = "Goede Morgen!";
+} else if (time < 20) {
+  greeting = "Goede middag!";
+} else {
+  greeting = "Goede avond!";
+}
+document.getElementById("groet").innerHTML = greeting;
+</script>
 
   </section>
   <footer>
