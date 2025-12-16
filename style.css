@@ -66,7 +66,7 @@ nav :active{
         color: #f5bd02;
         border-bottom: 3px solid #f5bd02;
     }
-    @media(max-width:995px){
+@media(max-width:995px){
     nav{
         position: absolute;
         display: none;
@@ -173,10 +173,10 @@ span{
     box-shadow: 0 0 25px #f5bd02;
 }
 
-.btn{
+.btn {
     display: inline-block;
     padding: 1rem 2.8rem;
-    background-color: black;
+    background-color: #161616;
     border-radius: 4rem;
     font-size: 1.6rem;
     color: #f5bd02;
@@ -344,3 +344,136 @@ form input[type=submit]{
     border-bottom: 3px solid transparent;
 }
 
+
+.topnav #myLinks {
+  display: none;
+}
+.navigation{
+    position: fixed;
+    right: -500px;
+    width: 350px;
+    height: 100%;
+    background-color: #161616;
+    transition: .5s;
+}
+
+.navigation ul li{
+    color: white;
+    text-align: right;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding: 20px 30px;
+    border-bottom: 1pt solid #161616;
+}
+
+.hamburger, .bar{
+    position: fixed;
+}
+
+.hamburger{
+    display: block;
+    top: 5%;
+    left: 95%;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    border: 0;
+    background: 0 0;
+}
+
+.bar{
+    top: 3px;
+    background: white;
+    width: 100%;
+    height: 4px;
+    transition: all .3s ease-in;
+}
+
+#bar2{
+    top: 11px;
+}
+
+#bar3{
+    top: 19px;
+}
+
+.navigation.active{
+    right: 0;
+}
+
+.hamburger.open #bar1{
+    background-color: #f5bd02;
+    transform: rotate(45deg) translate(6px, 5px);
+}
+
+.hamburger.open #bar2{
+    background-color: transparent;
+    
+}
+
+.hamburger.open #bar3{
+    background-color: #f5bd02;
+    transform: rotate(-45deg) translate(6px, -5px);
+}
+
+.dark-mode {
+  background-color: white;
+  color: black;
+}
+
+
+.ev1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    font-family: "poppins" sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.h1e  {
+    font-weight: normal;
+    font-size: 60px;
+    margin: -150px 0 40px;
+}
+.countdown {
+    display: flex;
+    transform: scale(2);
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+}
+.time h2 {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1;
+    margin: 0 0 5px;
+    color: #f5bd02;
+}
+@media (max-width: 500px) {
+    .h1e {
+        font-size: 45px;
+    }
+    .time {
+        margin: 5px;
+    }
+    .time h2 {
+        font-size: 12px;
+        
+    }
+    .time small {
+        font-size: 10px;
+    }
+}

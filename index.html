@@ -14,9 +14,28 @@
     <a href="pagina1.html" class="logo">Basher</a>
     <nav>
         <a href="aboutme.html" class="active">About me</a>
+        <a href="events.html">Events</a>
         <a href="opleidingen.html" class="active">School</a>
         <a href="stage.html" class="active">Stage</a>
         <a href="contacts.html" class="active">Contact</a>
+    <div class="navigation">
+        <button class="hamburger" onclick="show()">
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </button>
+
+        <nav>
+            <ul>
+              
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutme.html">About</a></li>
+                <li><a>Blog</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </div>
 
     </nav>
   </header>
@@ -44,9 +63,9 @@ let greeting;
 if (time < 12) {
   greeting = "Goede Morgen!";
 } else if (time < 20) {
-  greeting = "Goede middag!";
+  greeting = "Goede Middag!";
 } else {
-  greeting = "Goede avond!";
+  greeting = "Goede Avond!";
 }
 document.getElementById("groet").innerHTML = greeting;
 </script>
@@ -56,5 +75,6 @@ document.getElementById("groet").innerHTML = greeting;
       <p>© 2025 Basher Al Ali | </p>
       <a href="privacy.html" class="active"> Privacy Policy</a>
   </footer>
+  <script src="SCRIPT.JS"></script>
 </body>
 </html>
