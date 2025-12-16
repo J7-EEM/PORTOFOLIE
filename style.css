@@ -477,3 +477,32 @@ form input[type=submit]{
         font-size: 10px;
     }
 }
+
+.eh1 {
+    color: #f5bd02;
+}
+
+#consent-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 8rem;
+    background-color: #fff;
+    color: #161616;
+    transition: opacity 1s ease;
+
+    &.hidden {
+        opacity: 0;
+    }
+}
+.coo {
+    color: #f5bd02;
+    font-weight: bold;
+    font-style: italic;
+}
+#accept {
+    color: #f5bd02;
+    font-weight: bold;
+    font-style: italic;
+}
