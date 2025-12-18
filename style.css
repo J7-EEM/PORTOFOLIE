@@ -434,6 +434,7 @@ form input{
     background: 0 0;
 }
 
+
 .bar{
     top: 19px;
     background: var(--text-color);
@@ -561,3 +562,9 @@ form input{
     font-weight: bold;
     font-style: italic;
 }
+
+
+
+
+
+
