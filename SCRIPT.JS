@@ -4,11 +4,27 @@ function show(){
 }
 
 
-function myFunction() {
-   let element = document.body;
-   element.classList.toggle("dark-mode");
+
+let darkmode = localStorage.getItem('darkmode')
+const themeSwitch = document.getElementById('btn-switch')
+
+const enableDarkmode = () => {
+    document.body.classList.add('darkmode')
+    localStorage.setItem('darkmode', 'active')
 }
 
+const disableDarkmode = () => {
+document.body.classList.remove('darkmode')
+localStorage.setItem('darkmode', null)
+}
+
+if(darkmode === "active") enableDarkmode()
+
+
+themeSwitch.addEventListener("click", () => {
+    darkmode = localStorage.getItem('darkmode')
+    darkmode !== "active" ? enableDarkmode() : disableDarkmode()
+})
 
 const Days = document.getElementById('days');
 const Hours = document.getElementById('hours');

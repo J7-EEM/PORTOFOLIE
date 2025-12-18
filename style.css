@@ -11,7 +11,51 @@
     outline: none;
     font-family: 'poppins', sans-serif;
 }
+:root {
+    --base-color: #161616;
+    --base-variant: #161616;
+    --text-color:white;
+    --secondary-text:white;
+    --primary-color:white;
+    --accent-color:#f5bd02;
+}
+.darkmode {
+    --base-color: white;
+    --base-variant: white;
+    --text-color:#161616;
+    --secondary-text:#161616;
+    --primary-color:#161616;
+    --accent-color:#f5bd02;
+}
+#btn-switch {
 
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color:var(--base-color); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom:0;
+}
+
+#btn-switch svg{
+    fill: var(--accent-color)
+}
+
+#btn-switch svg:last-child{
+    display: none;
+}
+.darkmode #btn-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #btn-switch svg:last-child {
+    display: block;
+}
 html{
     font-size: 62.5%;
     
@@ -20,8 +64,8 @@ body{
     width: 100%;
     height: 100vh;
     overflow-x: hidden;
-    background-color: #161616;
-    color: white;
+    background-color: var(--base-color);
+    color:var(--text-color);
 
 }
 
@@ -32,7 +76,7 @@ header{
     left: 0;
     width: 100%;
     padding: 1rem 9%;
-    background-color: #161616;
+    background-color: var(--base-color);
     filter: drop-shadow(10px);
     display: flex;
     justify-content: space-between;
@@ -42,7 +86,7 @@ header{
 
 .logo{
     font-size: 3rem;
-    color: #f5bd02;
+    color: var(--accent-color);
     font-weight: 800;
     cursor: pointer;
     transition: 0.5s ease;
@@ -54,7 +98,7 @@ header{
 
 nav a{
     font-size: 1.8rem;
-    color: white;
+    color: var(--primary-color);
     margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease;
@@ -63,8 +107,8 @@ nav a{
 
 nav a:hover,
 nav :active{
-        color: #f5bd02;
-        border-bottom: 3px solid #f5bd02;
+        color: var(--accent-color);
+        border-bottom: 3px solid var(--accent-color);
     }
 @media(max-width:995px){
     nav{
@@ -73,11 +117,11 @@ nav :active{
         top: 0%;
         right: 0;
         width: 40%;
-        border-left: 3px solid #f5bd02;
-        border-bottom: 3px solid #f5bd02;
+        border-left: 3px solid var(--accent-color);
+        border-bottom: 3px solid var(--accent-color);
         border-bottom-left-radius: 2rem;
         padding: 1rem solid;
-        background-color: #161616;
+        background-color: var(--base-color);
         border-top: 0.1rem solid rgba(0,0,0,0.1);
     }
 
@@ -95,7 +139,7 @@ nav :active{
     nav a.active{
         padding: 1rem;
         border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #f5bd02;
+        border-bottom: 0.5rem solid var(--accent-color);
     }
 }
 section{
@@ -108,30 +152,30 @@ section{
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background-color: #161616;
+    background-color:var(--base-color);
 }
 
 .home .home-content h1{
-    font-size: 6rem;
+    font-size: clamp(2rem, 0.718rem + 5.47vw, 6rem);
     font-weight: 700;
     line-height: 1.3;
 }
 
 span{
     font-size: 6rem;
-    color: #f5bd02;
+    color: var(--accent-color);
     display: inline-block;
-    -webkit-text-stroke: .7px #f5bd02;
+    -webkit-text-stroke: .7px var(--accent-color);
 }
 
 .home-content h2{
-    font-size: 4rem;
+    font-size: clamp(2rem, 0.718rem + 5.47vw, 4rem);
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
 .home-content P{
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 0.718rem + 5.47vw, 2rem);
 }
 .home-img{
     border-radius: 50%;
@@ -158,66 +202,66 @@ span{
     width: 4rem;
     height: 4rem;
     background-color: transparent;
-    border: 0.2rem solid #f5bd02;
+    border: 0.2rem solid var(--accent-color);
     font-size: 2rem;
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem;
     transition: 0.3s ease;
-    color: #f5bd02;  
+    color: var(--accent-color);  
 }
 
 .social-icons a:hover{
-    color: black;
+    color: var(--base-color);
     transform: scale(1.3) translatey(-5px);
-    background-color: #f5bd02;
-    box-shadow: 0 0 25px #f5bd02;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 25px var(--accent-color);
 }
 
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
-    background-color: #161616;
+    background-color: var(--base-color);
     border-radius: 4rem;
     font-size: 1.6rem;
-    color: #f5bd02;
+    color: var(--accent-color);
     letter-spacing: 0.3rem;
     font-weight: 600;
-    border: 2px solid #f5bd02;
+    border: 2px solid var(--accent-color);
     transition: 0.3s ease;
     cursor: pointer;
 }
 
 .btn:hover{
     transform: scale3d(1.03);
-    background-color: #f5bd02;
-    color: black;
-    box-shadow: 0 0 25px #f5bd02;
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    box-shadow: 0 0 25px var(--accent-color);
 }
 
 .typing-text{
-    font-size: 34px;
+    font-size: clamp(2rem, 0.718rem + 5.47vw, 4rem);
     font-weight: 600;
     min-width: 280px;
 }
 
 .typing-text span{
     position: relative;
-    font-size: 34px;
+    font-size: clamp(2rem, 0.718rem + 5.47vw, 4rem);
 }
 
 .typing-text span::before{
     content: "Student";
-    color: #f5bd02;
+    color: var(--accent-color);
     animation: words 10s infinite;
 }
 
 .typing-text span::after{
     content: "";
-    background-color:#161616;
+    background-color:var(--base-color);
     position: absolute;
     width: calc(100% + 8px);
     height: 100%;
-    border-left: 3px solid #161616;
+    border-left: 3px solid var(--base-color);
     right: -8;
     animation: cursor 0.6s infinite;
     animation-direction: alternate-reverse;
@@ -225,7 +269,7 @@ span{
 
 @keyframes cursor{
     to{
-        border-left: 3px solid #f5bd02;
+        border-left: 3px solid var(--accent-color);
     }
 }
 
@@ -260,7 +304,7 @@ span{
     }
 
     .home .home-content h2{
-        font-size: 205rem;
+        font-size: 2rem;
     }
 
     .home .home-content h1{
@@ -288,19 +332,19 @@ span{
     width: 10rem;
     height: 10rem;
     background-color: transparent;
-    border: 0.2rem solid #f5bd02;
+    border: 0.2rem solid var(--accent-color);
     font-size: 2rem;
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem;
     transition: 0.3s ease;
-    color: #f5bd02;  
+    color: var(--accent-color);  
 }
 
 .social-icons2 a:hover{
-    color: black;
+    color: var(--base-color);
     transform: scale(1.3) translatey(-5px);
-    background-color: #f5bd02;
-    box-shadow: 0 0 25px #f5bd02;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 25px var(--accent-color);
 }
 footer{
 	display: flex;
@@ -314,7 +358,7 @@ footer{
 }
 footer a{
     font-size: 1.0rem;
-    color: white;
+    color: var(--text-color);
     font-weight: 500;
     transition: 0.3s ease;
     border-bottom: 3px solid transparent;
@@ -322,26 +366,34 @@ footer a{
 
 footer a:hover,
 footer :active{
-    color: #f5bd02;
-    border-bottom: 3px solid #f5bd02;
+    color:var(--accent-color);
+    border-bottom: 3px solid var(--accent-color);
 }
 
 form{
+    padding: 3px;
     display: flex;
     flex-direction: column;
     max-width: 400px;
     gap: 10px;
     max-width: fit-content;
+    background-color:var(--base-color);
+
 }
 form label{
     font-weight: bold;
-    color: #f5bd02;
+    color: var(--text-color);
+    
 }
 form input[type=submit]{
     max-width: fit-content;
-    color: #f5bd02;
-    background-color: #161616;
+    color: var(--accent-color);
+    background-color: var(--base-color);
     border-bottom: 3px solid transparent;
+}
+form input{
+    border:1px solid #161616;
+    border-radius: 3px;
 }
 
 
@@ -353,18 +405,18 @@ form input[type=submit]{
     right: -500px;
     width: 350px;
     height: 100%;
-    background-color: #161616;
+    background-color: var(--base-color);
     transition: .5s;
 }
 
 .navigation ul li{
-    color: white;
+    color: var(--text-color);
     text-align: right;
     text-transform: uppercase;
     list-style-type: none;
     font-size: 1.5em;
     padding: 20px 30px;
-    border-bottom: 1pt solid #161616;
+    border-bottom: 1pt solid var(--base-color);
 }
 
 .hamburger, .bar{
@@ -383,19 +435,26 @@ form input[type=submit]{
 }
 
 .bar{
-    top: 3px;
-    background: white;
+    top: 19px;
+    background: var(--text-color);
     width: 100%;
     height: 4px;
     transition: all .3s ease-in;
 }
 
+.bar:hover{
+    transform: scale3d(1.03);
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    box-shadow: 0 0 25px var(--accent-color);
+}
+
 #bar2{
-    top: 11px;
+    top: 27px;
 }
 
 #bar3{
-    top: 19px;
+    top: 35px;
 }
 
 .navigation.active{
@@ -403,7 +462,7 @@ form input[type=submit]{
 }
 
 .hamburger.open #bar1{
-    background-color: #f5bd02;
+    background-color: var(--accent-color);
     transform: rotate(45deg) translate(6px, 5px);
 }
 
@@ -413,14 +472,10 @@ form input[type=submit]{
 }
 
 .hamburger.open #bar3{
-    background-color: #f5bd02;
+    background-color: var(--accent-color);
     transform: rotate(-45deg) translate(6px, -5px);
 }
 
-.dark-mode {
-  background-color: white;
-  color: black;
-}
 
 
 .ev1 {
@@ -460,7 +515,7 @@ form input[type=submit]{
     font-size: 36px;
     line-height: 1;
     margin: 0 0 5px;
-    color: #f5bd02;
+    color: var(--accent-color);
 }
 @media (max-width: 500px) {
     .h1e {
@@ -479,7 +534,7 @@ form input[type=submit]{
 }
 
 .eh1 {
-    color: #f5bd02;
+    color: var(--accent-color);
 }
 
 #consent-popup {
@@ -488,8 +543,8 @@ form input[type=submit]{
     left: 0;
     right: 0;
     padding: 2rem 8rem;
-    background-color: #fff;
-    color: #161616;
+    background-color: var(--text-color);
+    color: var(--base-color);
     transition: opacity 1s ease;
 
     &.hidden {
@@ -497,12 +552,12 @@ form input[type=submit]{
     }
 }
 .coo {
-    color: #f5bd02;
+    color: var(--accent-color);
     font-weight: bold;
     font-style: italic;
 }
 #accept {
-    color: #f5bd02;
+    color: var(--accent-color);
     font-weight: bold;
     font-style: italic;
 }

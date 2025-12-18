@@ -9,13 +9,41 @@
 </head>
 
 <body>
-  <header>
-    <a href="index.html" class="logo"><i class="fa-solid fa-house"></i></a>
-    <h1>Legal Information & Privacy Policy</h1>
-    <p>Basher Al Ali – Portfolio Website</p>
-  </header>
+     <header>
+    <a href="pagina1.html" class="logo">Basher</a>
+    <nav>
+        <a href="aboutme.html" class="active">About me</a>
+        <a href="events.html">Events</a>
+        <a href="opleidingen.html" class="active">School</a>
+        <a href="stage.html" class="active">Stage</a>
+        <a href="contacts.html" class="active">Contact</a>
+    <div class="navigation">
+        <button class="hamburger" onclick="show()">
+            
+            <div id="bar1" class="bar"></div>
+            <div id="bar2" class="bar"></div>
+            <div id="bar3" class="bar"></div>
+        </button>
 
-  <main>
+        <nav>
+                <button id="btn-switch">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#f5bd02"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#f5bd02"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+                </button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutme.html">About</a></li>
+                <li><a href="events.html">Event</a></li>
+                <li><a href="contacts.html">Contact</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    </nav>
+  </header><br><br><br><br><br>
+
+  <main><br>
     <section>
       <h2>© Copyright Notice</h2>
       <p>© 2025 Basher Al Ali. All Rights Reserved.</p>
@@ -89,33 +117,42 @@
     <p>© 2025 Basher Al Ali | <a href="mailto:9027152@student.zadkine.nl">contact</a></p>
     <a href="#"></a>
   </footer>
+  <script src="SCRIPT.JS"></script>
 </body>
 </html>
 <style>
+  header{
+    margin-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 9%;
+    background-color: var(--base-color);
+    filter: drop-shadow(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
-      background-color: #000;
-      color: #f5bd02;
+      background-color: var(--base-color);
+      color: var(--accent-color);
       margin: 0;
       padding: 0;
       line-height: 1.6;
     }
 
-    header {
-      text-align: center;
-      background-color: #111;
-      padding: 2rem 1rem;
-      border-bottom: 2px solid #f5bd02;
-    }
-
+  
     header h1 {
       font-size: 2rem;
-      color: #f5bd02;
+      color: var(--accent-color);
       margin-bottom: 0.5rem;
     }
 
     header p {
-      color: #fff;
+      color: var(--text-color);
       font-size: 1rem;
     }
 
@@ -123,7 +160,7 @@
       max-width: 900px;
       margin: 2rem auto;
       padding: 1.5rem 2rem;
-      background-color: #111;
+      background-color: var(--base-color);
       border: 1px solid #f5bd02;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
@@ -134,18 +171,18 @@
     }
 
     h2 {
-      color: #fff;
+      color: var(--text-color);
       border-bottom: 1px solid ;
       padding-bottom: 0.3rem;
     }
 
     h3 {
-      color: #f5bd02;
+      color: var(--accent-color);
       margin-top: 1.5rem;
     }
 
     p, ul, li {
-      color: #ccc;
+      color: var(--text-color);
     }
 
     ul {
@@ -153,19 +190,19 @@
     }
 
     a {
-      color: #f5bd02;
+      color: var(--accent-color);
       text-decoration: none;
     }
 
     a:hover {
-      text-decoration: underline;
+      text-decoration: none;
     }
 
     footer {
       text-align: center;
       padding: 1.5rem;
-      background-color: #000;
-      border-top: 2px solid #f5bd02;
+      background-color: var(--base-color);
+      border-top: 2px solid var(--accent-color);
       font-size: 0.9rem;
     }
 
@@ -210,4 +247,268 @@
         font-size: 0.8rem;
       }
     }
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'poppins', sans-serif;
+}
+:root {
+    --base-color: #161616;
+    --base-variant: #161616;
+    --text-color:white;
+    --secondary-text:white;
+    --primary-color:white;
+    --accent-color:#f5bd02;
+}
+.darkmode {
+    --base-color: white;
+    --base-variant: white;
+    --text-color:#161616;
+    --secondary-text:#161616;
+    --primary-color:#161616;
+    --accent-color:#f5bd02;
+}
+#btn-switch {
+
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color:var(--base-color); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom:0;
+}
+
+#btn-switch svg{
+    fill: var(--accent-color)
+}
+
+#btn-switch svg:last-child{
+    display: none;
+}
+.darkmode #btn-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #btn-switch svg:last-child {
+    display: block;
+}
+nav a{
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-left: 4rem;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav :active{
+        color: var(--accent-color);
+        border-bottom: 3px solid var(--accent-color);
+    }
+@media(max-width:995px){
+    nav{
+        position: absolute;
+        display: none;
+        top: 0%;
+        right: 0;
+        width: 40%;
+        border-left: 3px solid var(--accent-color);
+        border-bottom: 3px solid var(--accent-color);
+        border-bottom-left-radius: 2rem;
+        padding: 1rem solid;
+        background-color: var(--base-color);
+        border-top: 0.1rem solid rgba(0,0,0,0.1);
+    }
+
+    nav.active{
+    display: block;
+    }
+
+    nav a{
+    display: block;
+    font-size: 2rem;
+    margin: 3rem 0;   
+    }
+
+    nav a:hover,
+    nav a.active{
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid var(--accent-color);
+    }
+}
+.topnav #myLinks {
+  display: none;
+}
+.navigation{
+    position: fixed;
+    right: -500px;
+    width: 350px;
+    height: 100%;
+    background-color: var(--base-color);
+    transition: .5s;
+}
+
+.navigation ul li{
+    color: var(--text-color);
+    text-align: right;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding: 20px 30px;
+    border-bottom: 1pt solid var(--base-color);
+}
+
+.hamburger, .bar{
+    position: fixed;
+}
+
+.hamburger{
+    display: block;
+    top: 5%;
+    left: 95%;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    border: 0;
+    background: 0 0;
+}
+
+.bar{
+    top: 19px;
+    background: var(--text-color);
+    width: 100%;
+    height: 4px;
+    transition: all .3s ease-in;
+}
+
+.bar:hover{
+    transform: scale3d(1.03);
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    box-shadow: 0 0 25px var(--accent-color);
+}
+
+#bar2{
+    top: 27px;
+}
+
+#bar3{
+    top: 35px;
+}
+
+.navigation.active{
+    right: 0;
+}
+
+.hamburger.open #bar1{
+    background-color: var(--accent-color);
+    transform: rotate(45deg) translate(6px, 5px);
+}
+
+.hamburger.open #bar2{
+    background-color: transparent;
+    
+}
+
+.hamburger.open #bar3{
+    background-color: var(--accent-color);
+    transform: rotate(-45deg) translate(6px, -5px);
+}
+
+
+
+.ev1 {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    font-family: "poppins" sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.h1e  {
+    font-weight: normal;
+    font-size: 60px;
+    margin: -150px 0 40px;
+}
+.countdown {
+    display: flex;
+    transform: scale(2);
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 15px;
+}
+.time h2 {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1;
+    margin: 0 0 5px;
+    color: var(--accent-color);
+}
+@media (max-width: 500px) {
+    .h1e {
+        font-size: 45px;
+    }
+    .time {
+        margin: 5px;
+    }
+    .time h2 {
+        font-size: 12px;
+        
+    }
+    .time small {
+        font-size: 10px;
+    }
+}
+
+.eh1 {
+    color: var(--accent-color);
+}
+
+#consent-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem 8rem;
+    background-color: var(--text-color);
+    color: var(--base-color);
+    transition: opacity 1s ease;
+
+    &.hidden {
+        opacity: 0;
+    }
+}
+.coo {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-style: italic;
+}
+#accept {
+    color: var(--accent-color);
+    font-weight: bold;
+    font-style: italic;
+}
   </style>
