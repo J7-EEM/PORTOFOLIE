@@ -156,8 +156,8 @@ nav :active{
         display: block;
     }
     body {
-        width: fit-content;
-        max-width: 470px;
+        width: 100%;
+        max-width: 100%;
     }
 
 
@@ -632,6 +632,227 @@ form input{
     margin-left:175px ;
 }
 
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+/* Tablets */
+@media (max-width: 768px){
+
+    header{
+        padding: 1rem 5%;
+    }
+
+    .logo{
+        font-size:2.5rem;
+    }
+
+    .home{
+        flex-direction:column;
+        text-align:center;
+        gap:2rem;
+        margin-top:100px;
+    }
+
+    .home-content{
+        width:100%;
+    }
+
+    .home-img img{
+        width:80%;
+        max-width:300px;
+    }
+
+    .social-icons{
+        display:flex;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .social-icons2{
+        flex-wrap:wrap;
+    }
+
+    .social-icons2 a{
+        width:7rem;
+        height:7rem;
+    }
+
+    nav a{
+        font-size:1.5rem;
+        margin-left:1rem;
+    }
+
+    .stage-text,
+    .list{
+        margin-left:0;
+        text-align:center;
+        padding:0 20px;
+    }
+
+    footer{
+        position:relative;
+        justify-content:center;
+        flex-wrap:wrap;
+        text-align:center;
+        padding:10px;
+    }
+
+    .navigation{
+        width:100%;
+    }
+
+    .hamburger{
+        top:25px;
+        right:20px;
+        left:auto;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px){
+
+    html{
+        font-size:55%;
+    }
+
+    body{
+        width:100%;
+        overflow-x:hidden;
+    }
+
+    .logo{
+        font-size:2rem;
+    }
+
+    .home{
+        padding:2rem;
+    }
+
+    .home-content h1{
+        font-size:3rem;
+    }
+
+    .home-content h2{
+        font-size:2rem;
+    }
+
+    .typing-text{
+        min-width:auto;
+    }
+
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .navigation{
+        width:100%;
+        right:-100%;
+    }
+
+    .navigation.active{
+        right:0;
+    }
+
+    .countdown{
+        transform:scale(1);
+        flex-wrap:wrap;
+    }
+
+    .time{
+        margin:10px;
+    }
+
+    #consent-popup{
+        padding:1rem;
+        font-size:1.2rem;
+    }
+}
+
+
+
+
+.navigation{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    transition: .4s ease;
+    z-index: 999;
+}
+
+.navigation.active{
+    right: 0;
+}
+
+@media(max-width:768px){
+    .navigation{
+        width: 100%;
+    }
+}
+
+
+
+.desktop-nav{
+    display:flex;
+    gap:2rem;
+}
+
+.hamburger{
+    display:none;
+}
+
+@media(max-width:768px){
+
+    .desktop-nav{
+        display:none;
+    }
+
+    .hamburger{
+        display:block;
+        position:fixed;
+        top:25px;
+        right:20px;
+        z-index:1001;
+    }
+
+    .navigation{
+        position:fixed;
+        top:0;
+        right:-100%;
+        width:100%;
+        height:100vh;
+        background-color:var(--base-color);
+        transition:.4s ease;
+        z-index:1000;
+    }
+
+    .navigation.active{
+        right:0;
+    }
+
+    .navigation ul{
+        margin-top:100px;
+        padding:0;
+    }
+
+    .navigation ul li{
+        text-align:center;
+        padding:20px;
+    }
+
+    .navigation ul li a{
+        font-size:2rem;
+    }
+}
 
 
 

@@ -1,6 +1,9 @@
 function show(){
-    document.querySelector('.hamburger').classList.toggle('open')
-    document.querySelector('.navigation').classList.toggle('active')
+    const hamburger = document.querySelector('.hamburger');
+    const navigation = document.querySelector('.navigation');
+
+    hamburger.classList.toggle('open');
+    navigation.classList.toggle('active');
 }
 
 
@@ -14,8 +17,14 @@ const enableDarkmode = () => {
 }
 
 const disableDarkmode = () => {
-document.body.classList.remove('darkmode')
-localStorage.setItem('darkmode', null)
+darkmode = localStorage.getItem('darkmode');
+
+if(darkmode === "active"){
+    disableDarkmode();
+}else{
+    enableDarkmode();
+}
+
 }
 
 if(darkmode === "active") enableDarkmode()
