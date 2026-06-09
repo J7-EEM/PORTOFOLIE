@@ -585,6 +585,42 @@ form input{
     }
 
 
+    .logo4{
+    font-size: 3rem;
+    color: #f5bd02;
+    font-weight: 800;
+    transition: 0.5s ease;
+    
+}
+
+.logo4:hover{
+    transform: scale(1.1);
+}
+.home-img3 img{
+    position: relative;
+    padding: 100px;
+    width: 32vw;
+    border-radius: 0;
+    box-shadow: 0 0 25px solid;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img3 img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.stage-text {
+    color: #f5bd02;
+    font-size: large;
+    margin-left: 170px;
+
+}
+.list {
+    font-size: medium;
+    margin-left:175px ;
+}
+
 
 
 
