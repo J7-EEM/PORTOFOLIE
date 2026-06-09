@@ -564,6 +564,26 @@ form input{
 }
 
 
+.home-img2 img{
+    position: relative;
+    width: 32vw;
+    border-radius: 0;
+    box-shadow: 0 0 25px solid;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.home-img2 img:hover{
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+
+    .para{
+        font-size: large;
+        margin-left: 20px;
+    }
+
 
 
 
