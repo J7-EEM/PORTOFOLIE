@@ -141,7 +141,28 @@ nav :active{
         border-radius: 0.5rem;
         border-bottom: 0.5rem solid var(--accent-color);
     }
+
 }
+
+/*@media (min-width:600px) {
+    .navigation {
+        display: none;
+    }
+
+}
+    */
+@media (max-width:600px) {
+    .navigation {
+        display: block;
+    }
+    body {
+        width: fit-content;
+        max-width: 470px;
+    }
+
+
+}
+
 section{
     min-height: 100vh;
     padding: 5rem 9% 5rem;
@@ -255,17 +276,7 @@ span{
     animation: words 10s infinite;
 }
 
-.typing-text span::after{
-    content: "";
-    background-color:var(--base-color);
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid var(--base-color);
-    right: -8;
-    animation: cursor 0.6s infinite;
-    animation-direction: alternate-reverse;
-}
+
 
 @keyframes cursor{
     to{
@@ -278,7 +289,7 @@ span{
         content: "Student";
     }
     21%, 40%{
-        content: "Bezorger";
+        content: "Programor";
     }
     41%, 60%{
         content: "ICT Medewerker";
