@@ -845,6 +845,7 @@ img{
 
     .navigation ul li a{
         font-size:2rem;
+        color:var(--accent-color);
     }
 }
 
