@@ -283,7 +283,7 @@ span{
         content: "Student";
     }
     21%, 40%{
-        content: "Programor";
+        content: "Programeur";
     }
     41%, 60%{
         content: "ICT Medewerker";
@@ -292,7 +292,7 @@ span{
         content: "Gamer";
     }
     81%, 100%{
-        content: "Reparatur";
+        content: "Reparateur";
     }
 }
 
